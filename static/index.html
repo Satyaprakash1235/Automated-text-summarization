@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PDF Notes Generator | Study Smarter</title>
+    <meta name="description" content="Generate short notes, important points, and exam questions from your PDFs instantly using AI.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <div class="logo">
+                <span class="icon">📚</span>
+                <h1>NoteGen <span class="ai-tag">AI</span></h1>
+            </div>
+            <p class="subtitle">Upload your PDF and let AI distill the knowledge for you.</p>
+        </header>
+
+        <section class="upload-section card">
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-content">
+                    <span class="upload-icon">📄</span>
+                    <p>Drag & drop your PDF here or <span>browse</span></p>
+                    <input type="file" id="file-input" accept=".pdf" hidden>
+                </div>
+            </div>
+            <div id="file-info" class="file-info hidden">
+                <span class="file-name">filename.pdf</span>
+                <button id="generate-btn" class="primary-btn">Generate Notes</button>
+            </div>
+        </section>
+
+        <section id="results-section" class="results-section hidden">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="notes">Summary</button>
+                <button class="tab-btn" data-tab="points">Key Points</button>
+                <button class="tab-btn" data-tab="questions">Questions</button>
+            </div>
+
+            <div class="tab-content card">
+                <div id="notes" class="tab-pane active">
+                    <h3>Short Notes</h3>
+                    <div class="content notes-content"></div>
+                </div>
+                <div id="points" class="tab-pane">
+                    <h3>Important Points</h3>
+                    <ul class="content points-content"></ul>
+                </div>
+                <div id="questions" class="tab-pane">
+                    <h3>Exam Questions</h3>
+                    <ul class="content questions-content"></ul>
+                </div>
+            </div>
+        </section>
+
+        <div id="loading-overlay" class="loading-overlay hidden">
+            <div class="loader">
+                <div class="spinner"></div>
+                <p>Analyzing document...</p>
+                <p class="sub-loader">This may take a minute for large files.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
